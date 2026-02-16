@@ -1,64 +1,55 @@
-# SQL Data Cleaning Project: Layoffs 2022
+# Global Tech Layoffs Data Cleaning Project (SQL)
+
 ## Project Overview
 
-The **Layoffs 2022** dataset tracks tech layoffs throughout 2022, including company details, the number of employees laid off, and other key information. This project focuses on:
+This project focuses on cleaning and preparing a real-world layoffs dataset using SQL.  
+The dataset contains information about global tech layoffs during 2022.
 
-1. Cleaning and standardizing data for consistency.
-2. Handling missing and duplicate values.
-3. Identifying trends in layoffs for further analysis.
-
----
-
-## Dataset Details
-
-The dataset contains the following columns:
-
-| Column Name       | Description                                         |
-|-------------------|-----------------------------------------------------|
-| `Company`         | Name of the company that laid off employees         |
-| `Date`            | Date of the layoffs                                 |
-| `Industry`        | Industry the company belongs to                     |
-| `Laid_Off_Count`  | Number of employees laid off                        |
-| `Percentage`      | Percentage of total workforce affected by layoffs   |
-| `Country`         | Country where the layoffs occurred                  |
-| `Funding`         | Funding status of the company                       |
+The objective was to transform raw, inconsistent data into a structured and analysis-ready dataset by applying professional data cleaning techniques.
 
 ---
 
-## Tools & Techniques
+## Dataset Summary
 
-This project uses the following:
-
-- **Database**: MySQL/PostgreSQL/SQLite (choose one based on your usage).
-- **Key SQL Commands**:
-  - Data Selection: `SELECT`, `WHERE`, `GROUP BY`
-  - Data Transformation: `UPDATE`, `CASE`, `CAST`
-  - Data Cleaning: `DELETE`, `COALESCE`, `IS NULL`
-  - Data Analysis: Aggregation functions (`SUM`, `AVG`, `COUNT`)
-- **Cleaning Techniques**:
-  - Resolving inconsistent date formats.
-  - Standardizing company and country names.
-  - Handling outliers in `Laid_Off_Count` and `Percentage`.
+- Source: Kaggle – Layoffs 2022 Dataset
+- Records (Raw): 2361 rows
+- Records (Cleaned): 1995 rows
+- Features: 9 columns
+- Time Period: 2022
+- Domain: Global Tech Layoffs
 
 ---
 
-## Project Highlights
+## Data Cleaning Impact
 
-Key cleaning steps include:
+- Initial Records: 2361
+- Final Cleaned Records: 1995
+- Total Rows Removed: 366
+- Data Standardization Applied: Yes
+- Duplicate Removal Method: ROW_NUMBER() Window Function
+- Null Handling Strategy: Conditional Deletion & Data Imputation
 
-- **Missing Data**: Addressed null values in critical columns like `Industry` and `Country`.
-- **Duplicates**: Removed duplicate records for accurate analysis.
-- **Outlier Detection**: Analyzed outliers in `Percentage` to ensure logical values.
-- **Date Standardization**: Converted all date values to a uniform format (`YYYY-MM-DD`).
+This cleaning process improved dataset reliability and prepared it for accurate exploratory and time-series analysis.
 
 ---
 
-## Results
+## Cleaning Steps Performed
 
-- Cleaned dataset with consistent and reliable data for analysis.
-- Highlighted trends, such as:
-  - Industries with the highest layoffs.
-  - Countries most affected.
-  - Monthly breakdown of layoffs.
+### 1. Removed Duplicates
+Used `ROW_NUMBER()` window function inside a CTE to identify duplicate rows and removed them.
+
+### 2. Standardized Text Data
+- Trimmed whitespace
+- Standardized country names
+- Cleaned inconsistent industry values
+
+### 3. Handled Missing Values
+- Deleted rows where critical fields were NULL
+- Used self-joins where applicable for filling missing values
+
+### 4. Date Formatting
+Converted date column into proper SQL DATE format for time-series analysis.
+
+---
 
 
