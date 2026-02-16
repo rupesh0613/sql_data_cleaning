@@ -36,28 +36,28 @@ The project emphasizes practical data engineering skills using SQL, including du
 
 ## Impact Achieved
 
--Removed 366 inconsistent or duplicate records
--Improved dataset integrity and reliability
--Enabled accurate aggregation and time-series analysis
--Prepared clean data for analytical reporting
+- Removed 366 inconsistent or duplicate records
+- Improved dataset integrity and reliability
+- Enabled accurate aggregation and time-series analysis
+- Prepared clean data for analytical reporting
 
 ---
 
 ## Tech Stack
 
--SQL (MySQL)
--Window Functions (`ROW_NUMBER()`)
--Common Table Expressions (CTEs)
--Aggregate Functions
--Date Functions
--Data Standardization Techniques
+- SQL (MySQL)
+- Window Functions (`ROW_NUMBER()`)
+- Common Table Expressions (CTEs)
+- Aggregate Functions
+- Date Functions
+- Data Standardization Techniques
 
 ---
 
 ## Cleaning Steps Performed
 
 ### 1. Removed Duplicates
-Used `ROW_NUMBER()` window function inside a CTE to identify duplicate rows and removed them.
+- Used `ROW_NUMBER()` window function inside a CTE to identify duplicate rows and removed them.
 
 ### 2. Standardized Text Data
 - Trimmed whitespace
@@ -69,7 +69,7 @@ Used `ROW_NUMBER()` window function inside a CTE to identify duplicate rows and 
 - Used self-joins where applicable for filling missing values
 
 ### 4. Date Formatting
-Converted date column into proper SQL DATE format for time-series analysis.
+- Converted date column into proper SQL DATE format for time-series analysis.
 
 ---
 
