@@ -2,10 +2,11 @@
 
 ## Project Overview
 
-This project focuses on cleaning and preparing a real-world layoffs dataset using SQL.  
-The dataset contains information about global tech layoffs during 2022.
+This project demonstrates advanced SQL-based data cleaning techniques applied to a real-world global layoffs dataset sourced from Kaggle.
 
-The objective was to transform raw, inconsistent data into a structured and analysis-ready dataset by applying professional data cleaning techniques.
+The primary objective was to transform raw, inconsistent layoff records into a structured, analysis-ready dataset suitable for business intelligence, exploratory analysis, and time-series trend evaluation.
+
+The project emphasizes practical data engineering skills using SQL, including duplicate removal, data standardization, null handling, and date transformation.
 
 ---
 
@@ -22,14 +23,34 @@ The objective was to transform raw, inconsistent data into a structured and anal
 
 ## Data Cleaning Impact
 
-- Initial Records: 2361
-- Final Cleaned Records: 1995
-- Total Rows Removed: 366
-- Data Standardization Applied: Yes
-- Duplicate Removal Method: ROW_NUMBER() Window Function
-- Null Handling Strategy: Conditional Deletion & Data Imputation
+| Metric                | Value                                       |
+| --------------------- | ------------------------------------------- |
+| Initial Records       | 2,361                                       |
+| Final Cleaned Records | 1,995                                       |
+| Total Rows Removed    | 366                                         |
+| Duplicate Handling    | ROW_NUMBER() Window Function                |
+| Null Handling         | Conditional Deletion & Self-Join Imputation |
+| Date Standardization  | Converted to SQL DATE format                |
 
-This cleaning process improved dataset reliability and prepared it for accurate exploratory and time-series analysis.
+---
+
+## Impact Achieved
+
+-Removed 366 inconsistent or duplicate records
+-Improved dataset integrity and reliability
+-Enabled accurate aggregation and time-series analysis
+-Prepared clean data for analytical reporting
+
+---
+
+## Tech Stack
+
+-SQL (MySQL)
+-Window Functions (`ROW_NUMBER()`)
+-Common Table Expressions (CTEs)
+-Aggregate Functions
+-Date Functions
+-Data Standardization Techniques
 
 ---
 
